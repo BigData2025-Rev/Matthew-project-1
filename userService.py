@@ -5,7 +5,7 @@ class UserService():
     def newUser(self,name,password):
         if self.dao.userExists(name):
             return "User already exists"
-        elif len(password) <= 8:
+        elif len(password) < 8:
             return "Password must be at least 8 characters"
         else:
             self.dao.newUser(name, password)

@@ -1,18 +1,44 @@
-2025-01-07 12:17:37,892 :: {"topologyId": {"$oid": "677d7dd1eec41bc570edc0ed"}, "driverConnectionId": 1, "serverHost": "localhost", "serverPort": 27017, "awaited": false, "message": "Server heartbeat started"}
-2025-01-07 12:17:37,894 :: {"topologyId": {"$oid": "677d7dd1eec41bc570edc0ed"}, "serverHost": "localhost", "serverPort": 27017, "awaited": false, "durationMS": 15.000000013969839, "failure": "\"_OperationCancelled('operation cancelled')\"", "message": "Server heartbeat failed"}
-2025-01-07 12:17:56,135 :: {"topologyId": {"$oid": "677d7de4aff8109941dff7ff"}, "driverConnectionId": 1, "serverHost": "localhost", "serverPort": 27017, "awaited": false, "message": "Server heartbeat started"}
-2025-01-07 12:17:56,138 :: {"topologyId": {"$oid": "677d7de4aff8109941dff7ff"}, "driverConnectionId": 1, "serverConnectionId": 142, "serverHost": "localhost", "serverPort": 27017, "awaited": false, "durationMS": 15.000000013969839, "reply": "{\"helloOk\": true, \"ismaster\": true, \"topologyVersion\": {\"processId\": {\"$oid\": \"6773fa521ee01d0c1b5def5e\"}}, \"maxBsonObjectSize\": 16777216, \"maxMessageSizeBytes\": 48000000, \"maxWriteBatchSize\": 100000, \"localTime\": {\"$date\": \"2025-01-07T19:17:56.137Z\"}, \"logicalSessionTimeoutMinutes\": 30, \"connectionId\": 142, \"maxWireVersion\": 25, \"ok\": 1.0}", "message": "Server heartbeat succeeded"}
-2025-01-07 12:17:56,139 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Connection pool ready", "serverHost": "localhost", "serverPort": 27017}
-2025-01-07 12:17:56,139 :: {"topologyId": {"$oid": "677d7de4aff8109941dff7ff"}, "previousDescription": "<TopologyDescription id: 677d7de4aff8109941dff7ff, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "newDescription": "<TopologyDescription id: 677d7de4aff8109941dff7ff, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.015000000013969839>]>", "message": "Topology description changed"}
-2025-01-07 12:17:56,140 :: {"topologyId": {"$oid": "677d7de4aff8109941dff7ff"}, "driverConnectionId": 1, "serverConnectionId": 142, "serverHost": "localhost", "serverPort": 27017, "awaited": true, "message": "Server heartbeat started"}
-2025-01-07 12:17:56,398 :: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x000001DD4EF29240>", "operation": "insert", "topologyDescription": "<TopologyDescription id: 677d7de4aff8109941dff7ff, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.015000000013969839>]>", "clientId": {"$oid": "677d7de4aff8109941dff7ff"}}
-2025-01-07 12:17:56,398 :: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x000001DD4EF29240>", "operation": "insert", "topologyDescription": "<TopologyDescription id: 677d7de4aff8109941dff7ff, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.015000000013969839>]>", "clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "serverHost": "localhost", "serverPort": 27017}
-2025-01-07 12:17:56,398 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
-2025-01-07 12:17:56,398 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Connection created", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
-2025-01-07 12:17:56,402 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Connection ready", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.015999999945051968}
-2025-01-07 12:17:56,403 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.015999999945051968}
-2025-01-07 12:17:56,403 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Command started", "command": "{\"insert\": \"users\", \"ordered\": true, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"oISO9kumQN+l3hWwBPojpw==\", \"subType\": \"04\"}}}, \"$db\": \"boardgames\", \"documents\": [{\"username\": \"B\", \"password\": {\"$binary\": {\"base64\": \"JDJiJDEyJHQ0OFBOYzNZa3Q0WWl2TnVMdFNxMWVldU4vbS5QRTBOMUpsMEx4Wk1QMzRFdkxvOHdFbG91\", \"subType\": \"00\"}}, \"_id\": {\"$oid\": \"677d7de4aff8109941dff800\"}}]}", "commandName": "insert", "databaseName": "boardgames", "requestId": 18467, "operationId": 18467, "driverConnectionId": 1, "serverConnectionId": 144, "serverHost": "localhost", "serverPort": 27017}
-2025-01-07 12:17:56,428 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Command succeeded", "durationMS": 24.537, "reply": "{\"n\": 1, \"ok\": 1.0}", "commandName": "insert", "databaseName": "boardgames", "requestId": 18467, "operationId": 18467, "driverConnectionId": 1, "serverConnectionId": 144, "serverHost": "localhost", "serverPort": 27017}
-2025-01-07 12:17:56,428 :: {"clientId": {"$oid": "677d7de4aff8109941dff7ff"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
-2025-01-07 12:17:56,428 :: Added user B to users collection
-2025-01-07 12:17:56,645 :: {"topologyId": {"$oid": "677d7de4aff8109941dff7ff"}, "serverHost": "localhost", "serverPort": 27017, "awaited": true, "durationMS": 500.0, "failure": "\"_OperationCancelled('operation cancelled')\"", "message": "Server heartbeat failed"}
+2025-01-08 11:18:03,015 :: Added user l to users collection
+2025-01-09 12:06:38,023 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,027 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,034 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,037 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,040 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,045 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,049 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,050 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,052 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,055 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,060 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,062 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,064 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,065 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,068 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,072 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,075 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,078 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,080 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,082 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,084 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,085 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,087 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,089 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,092 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,096 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,098 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,099 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,103 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,107 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,111 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,113 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,116 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,118 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,121 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,122 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,125 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,130 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,132 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:06:38,135 :: Inserted %(game)s, qty  %(quantity)s into inventory
+2025-01-09 12:08:37,041 :: login as %(name)s is %(attempt)s
+2025-01-09 12:13:52,942 :: login as %(name)s is %(attempt)s
+2025-01-09 12:14:42,045 :: New order made by %(userID)s
