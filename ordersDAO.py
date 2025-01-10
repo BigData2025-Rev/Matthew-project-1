@@ -11,7 +11,7 @@ class OrdersDAO():
             "games":games,
             "user":userID,
             "total":total})
-        logging.info("New order made by %(userID)s")
+        logging.info("New order made by %s",userID)
     def allUserOrders(self,userID):
         return self.col.find({"user":userID})
     def allOrders(self):

@@ -26,3 +26,5 @@ class UserService():
         self.dao.removeAdmin(name)
     def getUser(self,name):
         return self.dao.getUser(name)
+    def userExists(self,name):
+        return self.dao.userExists(name)

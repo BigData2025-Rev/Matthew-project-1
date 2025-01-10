@@ -1,44 +1,30 @@
 2025-01-08 11:18:03,015 :: Added user l to users collection
-2025-01-09 12:06:38,023 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,027 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,034 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,037 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,040 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,045 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,049 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,050 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,052 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,055 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,060 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,062 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,064 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,065 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,068 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,072 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,075 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,078 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,080 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,082 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,084 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,085 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,087 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,089 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,092 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,096 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,098 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,099 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,103 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,107 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,111 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,113 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,116 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,118 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,121 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,122 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,125 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,130 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,132 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:06:38,135 :: Inserted %(game)s, qty  %(quantity)s into inventory
-2025-01-09 12:08:37,041 :: login as %(name)s is %(attempt)s
-2025-01-09 12:13:52,942 :: login as %(name)s is %(attempt)s
-2025-01-09 12:14:42,045 :: New order made by %(userID)s
+2025-01-09 13:39:20,727 :: ML has received admin access
+2025-01-10 08:02:27,816 :: login as ML is True
+2025-01-10 08:14:23,986 :: login as ML is True
+2025-01-10 08:15:20,277 :: New order made by 67784c78b6d68eadf7c33cef
+2025-01-10 08:20:43,796 :: login as ML is True
+2025-01-10 08:21:42,009 :: login as ML is True
+2025-01-10 08:26:06,124 :: login as ML is True
+2025-01-10 08:26:31,462 :: New order made by 67784c78b6d68eadf7c33cef
+2025-01-10 08:35:17,186 :: login as ML is True
+2025-01-10 08:35:36,948 :: New order made by 67784c78b6d68eadf7c33cef
+2025-01-10 08:39:12,023 :: login as ML is True
+2025-01-10 08:41:49,234 :: New order made by 67784c78b6d68eadf7c33cef
+2025-01-10 08:43:29,931 :: login as ML is True
+2025-01-10 09:16:53,541 :: login as B is True
+2025-01-10 09:17:34,181 :: B has been removed from users
+2025-01-10 09:52:10,679 :: login as ML is True
+2025-01-10 09:52:52,590 :: Updated quantity of Gloomhaven to 75
+2025-01-10 12:17:09,795 :: login as ML is True
+2025-01-10 12:19:17,366 :: Updated quantity of Twilight Struggle to 40
+2025-01-10 12:22:53,000 :: l has received admin access
+2025-01-10 12:23:21,742 :: Removed admin access from l
+2025-01-10 12:37:15,714 :: login as ML is True
+2025-01-10 13:01:51,226 :: login as ML is True
+2025-01-10 13:07:38,845 :: login as ML is True
+2025-01-10 13:15:09,041 :: login as ML is True
+2025-01-10 13:21:52,376 :: login as ML is True
+2025-01-10 13:22:23,814 :: Updated quantity of Gloomhaven to 43
+2025-01-10 13:23:21,785 :: Updated quantity of Twilight Struggle to 40
+2025-01-10 13:24:14,716 :: New order made by 67784c78b6d68eadf7c33cef

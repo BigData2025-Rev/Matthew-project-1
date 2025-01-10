@@ -20,7 +20,7 @@ class UserDAO():
         if self.userExists(name):
             user = self.col.find_one({"username":name})
             attempt = bcrypt.checkpw(password.encode("utf-8"),user["password"])
-            logging.info("login as %(name)s is %(attempt)s")
+            logging.info("login as %s is %s",name, attempt)
             return attempt
         else: 
             return False

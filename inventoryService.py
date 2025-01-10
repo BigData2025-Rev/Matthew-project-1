@@ -7,16 +7,20 @@ class InventoryService():
             self.dao.newEntry(game,quantity,price)
             return True
         else: return False
-    def updateQuantity(self,name,quantity):
-        self.dao.updateQuantity(name,quantity)
+    def updateGame(self,name,quantity,price):
+        self.dao.updateGame(name,quantity,price)
     def delete(self,name):
         self.dao.delete(name)
     def getInv(self):
         return self.dao.getInv()
     def getGame(self, name):
-        if not self.dao.gameInInventory:
+        if self.dao.gameInInventory(name):
             return self.dao.getGame(name)
         else:
             return None
     def getGames(self):
         return self.dao.getGames()
+    def gameExists(self, game):
+        return self.dao.gameExists(game)
+    def gameInInventory(self, game):
+        return self.dao.gameInInventory(game)

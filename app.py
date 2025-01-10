@@ -70,7 +70,7 @@ class App():
     def home(self):
         if not self.user["admin"]:
             while True:
-                selection = input("1) New order\n2) View orders\n3) View all games\n4) Delete account\n5) Quit")
+                selection = input("1) New order\n2) View orders\n3) View all games\n4) Delete account\n5) Quit\n")
                 match selection:
                     case "1":
                         self.order()
@@ -91,7 +91,7 @@ class App():
 
         else:
             while True:
-                selection = input("1) New order\n2) View orders\n3) View all games\n4) Delete account\n5) Admin actions 6) Quit\n")
+                selection = input("1) New order\n2) View orders\n3) View all games\n4) Delete account\n5) Admin actions\n6) Quit\n")
                 match selection:
                     case "1":
                         self.order()
@@ -119,8 +119,7 @@ class App():
             counter = 0
             while True:
                 displayedGames = []
-                t="Title"
-                print(f"{t:<50} Price")
+                print(f"{'Title':<50} Price")
                 for _ in range(10):
                     game = games[counter]
                     name = game["name"]
@@ -162,13 +161,14 @@ class App():
                     print("Game not found or unavailable")
                     continue
                 else:
-                    print(game["name"] + " " + str(game["price"]))
+                    price = game["price"]
+                    print(game["name"] + " $" + f"{price:.2f}")
                     while True:
-                        selection = input("1) add game to order\n2) search again")
+                        selection = input("1) add game to order\n2) search again\n")
                         if selection == "1":
                             self.ordersService.addGame(game)
                             while True:
-                                selection = input("1) complete order\n2) search again")
+                                selection = input("1) submit order\n2) search again\n")
                                 if selection == "1":
                                     self.ordersService.newOrder(self.user["_id"])
                                     self.ordersService.clearOrder()
@@ -198,30 +198,112 @@ class App():
     def viewOrders(self):
         orders = self.ordersService.allUserOrders(self.user["_id"])
         for order in orders:
+            iD = order["_id"]
+            print(f"\nOrder {iD}")
             games = order["games"]
             total = order["total"]
-            print(f"games: {games}\nTotal: {total:.2f}")
+            print("Games:")
+            for game in games:
+                print(game["name"])
+            print(f"-------\nTotal: ${total:.2f}")
+        input("Press enter to return")
+        self.home()
     def viewGames(self):
-        pass
+        games = self.gamesService.getAllGames()
+        counter = 0
+        for game in games:
+            if counter % 10 == 0:
+                print(f"\n{'Title':<50}{'Year Released':<15}{'Players':<9}{'Minutes to Play':<17}{'Complexity(1-5)':16}{'Rating(1-10)':<12}")
+                print("-"*120)
+            print(f"{game['Name']:<50}{game['Year Published']:<15}{game['Min Players']:<1}-{game['Max Players']:<7}{game['Play Time']:<17}{game['Complexity Average']:<16}{game['Rating Average']:<12}")
+            counter += 1
+            if counter % 10 == 0:
+                while True:
+                    selection = input("'n' to view next page 'q' to exit\n")
+                    if selection == "n":
+                        break
+                    elif selection == "q":
+                        self.home()
+                        return
+                    else:
+                        print("enter 'n' or 'q'")
+
     def deleteAcc(self):
-        pass
+        selection = input("Are you sure you would like to permanently delete your account? (y/n)\n")
+        if selection == "y":
+            self.userService.deleteUser(self.user["username"])
+            print("Account deleted")
+            sys.exit()
+        else:self.home()
     def admin(self):
         while True:
-            selection = input("1) View inventory\n2) Edit inventory 3) Grant/remove admin access from user\n4) Return")
+            selection = input("1) View inventory\n2) Edit inventory\n3) Grant/remove admin access from user\n4) Return\n")
             match selection:
                 case "1":
-                    pass
+                    self.viewInventory()
                     break
                 case "2":
-                    pass
+                    self.editInv()
                     break
                 case "3":
-                    pass
+                    self.changeAdmin()
                     break
                 case "4":
                     self.home()
                     break
-            
+    def changeAdmin(self):
+        name = input("Enter username:\n")
+        if self.userService.userExists(name):
+            if self.userService.checkAdmin(name):
+                while True:
+                    selection = input(f"Remove admin access from {name}?(y/n)")
+                    if selection == "y":
+                        self.userService.removeAdmin(name)
+                        print("access removed")
+                        break
+                    elif selection == "n":
+                        break
+                    else:
+                        print("Enter y or n")
+            else:
+                while True:
+                    selection = input(f"Give admin access to {name}?(y/n)")
+                    if selection == "y":
+                        self.userService.giveAdmin(name)
+                        print("access granted")
+                        break
+                    elif selection == "n":
+                        break
+                    else:
+                        print("Enter y or n")
+        else:
+            print("User not found")
+        self.admin()
+
+    def viewInventory(self):
+        games =self.inventoryService.getGames()
+        print(f"{'Title':<52}{'id':<10}{'Quantity':<10}{'Price':<5}")
+        for game in games:
+            title = game["name"]
+            iD = game["ID"]
+            quantity= game["quantity"]
+            price = game["price"]
+            print(f"{title:<45}{iD:<10}{quantity:<10}{price:<5}")
+        self.admin()
+    def editInv(self):
+        while True:
+            game = input("Enter the name of game to add or change:\n")
+            if self.inventoryService.gameExists(game):
+                qty = int(input("Enter quantity:\n"))
+                price = float(input("Enter price:\n"))
+                if self.inventoryService.gameInInventory(game):
+                    self.inventoryService.updateGame(game,qty,price)
+                else:
+                    self.inventoryService.newEntry(game,qty,price)
+                break
+            else: print("Invalid game entry")
+        print("Update complete")
+        self.admin()
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client.get_database("boardgames")

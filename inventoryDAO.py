@@ -13,14 +13,14 @@ class InventoryDAO():
             "quantity":quantity,
             "price":price
         })
-        logging.info("Inserted %(game)s, qty  %(quantity)s into inventory")
+        logging.info("Inserted %s, qty  %s into inventory",game,quantity)
 
-    def updateQuantity(self, name, quantity):
-        self.col.update_one({"name":name},{"$set":{"quantity":quantity}})
-        logging.info("Updated quantity of %(name)s to %(quantity)s")
+    def updateGame(self, name, quantity,price):
+        self.col.update_one({"name":name},{"$set":{"quantity":quantity,"price":price}})
+        logging.info("Updated quantity of %s to %s",name,quantity)
     def delete(self, name):
         self.col.delete_one({"name":name})
-        logging.info("%(name)s deleted from inventory")
+        logging.info("%s deleted from inventory",name)
     def getInv(self):
         return self.col.find()
     def gameExists(self,name):
