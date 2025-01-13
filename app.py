@@ -1,3 +1,5 @@
+import pymongo
+import sys
 from userDAO import UserDAO
 from userService import UserService
 from gamesDAO import GamesDAO
@@ -6,8 +8,7 @@ from inventoryDAO import InventoryDAO
 from inventoryService import InventoryService
 from ordersDAO import OrdersDAO
 from ordersService import OrdersService
-import pymongo
-import sys
+
 
 class App():
     def __init__(self, db):
@@ -43,6 +44,7 @@ class App():
             else:
                 self.user = self.userService.getUser(name)
                 self.home()
+                input("Press enter to continue\n")
                 break
     def login(self):
         while True:
@@ -68,9 +70,11 @@ class App():
 
 
     def home(self):
+        print("\033c")
         if not self.user["admin"]:
             while True:
                 selection = input("1) New order\n2) View orders\n3) View all games\n4) Delete account\n5) Quit\n")
+                print("\033c") 
                 match selection:
                     case "1":
                         self.order()
@@ -92,6 +96,7 @@ class App():
         else:
             while True:
                 selection = input("1) New order\n2) View orders\n3) View all games\n4) Delete account\n5) Admin actions\n6) Quit\n")
+                print("\033c") 
                 match selection:
                     case "1":
                         self.order()
@@ -119,6 +124,7 @@ class App():
             counter = 0
             while True:
                 displayedGames = []
+                print("\033c")
                 print(f"{'Title':<50} Price")
                 for _ in range(10):
                     game = games[counter]
@@ -142,6 +148,7 @@ class App():
                             if selection == "y":
                                 self.ordersService.newOrder(self.user["_id"])
                                 self.ordersService.clearOrder()
+                                print("Order submitted")
                                 break
                             elif selection == "n":
                                 break
@@ -172,6 +179,7 @@ class App():
                                 if selection == "1":
                                     self.ordersService.newOrder(self.user["_id"])
                                     self.ordersService.clearOrder()
+                                    print("Order submitted")
                                     return
                                 elif selection == "2":
                                     break
@@ -208,6 +216,7 @@ class App():
             print(f"-------\nTotal: ${total:.2f}")
         input("Press enter to return")
         self.home()
+
     def viewGames(self):
         games = self.gamesService.getAllGames()
         counter = 0
@@ -235,9 +244,12 @@ class App():
             print("Account deleted")
             sys.exit()
         else:self.home()
+
     def admin(self):
+        print("\033c") 
         while True:
-            selection = input("1) View inventory\n2) Edit inventory\n3) Grant/remove admin access from user\n4) Return\n")
+            selection = input("1) View inventory\n2) Edit inventory\n3) Grant/remove admin access from user\n4) View all orders\n5) Return\n")
+            print("\033c") 
             match selection:
                 case "1":
                     self.viewInventory()
@@ -249,8 +261,12 @@ class App():
                     self.changeAdmin()
                     break
                 case "4":
+                    self.allOrders()
+                    break
+                case "5":
                     self.home()
                     break
+
     def changeAdmin(self):
         name = input("Enter username:\n")
         if self.userService.userExists(name):
@@ -278,6 +294,7 @@ class App():
                         print("Enter y or n")
         else:
             print("User not found")
+        input("Press enter to return\n")
         self.admin()
 
     def viewInventory(self):
@@ -288,8 +305,10 @@ class App():
             iD = game["ID"]
             quantity= game["quantity"]
             price = game["price"]
-            print(f"{title:<45}{iD:<10}{quantity:<10}{price:<5}")
+            print(f"{title:<52}{iD:<10}{quantity:<10}{price:.2f}")
+        input("Press enter to return\n")
         self.admin()
+
     def editInv(self):
         while True:
             game = input("Enter the name of game to add or change:\n")
@@ -303,6 +322,23 @@ class App():
                 break
             else: print("Invalid game entry")
         print("Update complete")
+        input("Press enter to return\n")
+        self.admin()
+    
+    def allOrders(self):
+        orders = self.ordersService.allOrders()
+        for order in orders:
+            iD = order["_id"]
+            user = order["user"]
+            print(f"\nOrder {iD}")
+            print(f"User ID: {user}\n")
+            games = order["games"]
+            total = order["total"]
+            print("Games:")
+            for game in games:
+                print(game["name"])
+            print(f"\nTotal: ${total:.2f}\n-------")
+        input("Press enter to return")
         self.admin()
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
