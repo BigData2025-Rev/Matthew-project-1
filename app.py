@@ -340,8 +340,3 @@ class App():
             print(f"\nTotal: ${total:.2f}\n-------")
         input("Press enter to return")
         self.admin()
-
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client.get_database("boardgames")
-app = App(db)
-app.start()

@@ -46,6 +46,10 @@
 2025-01-12 21:35:41,679 :: Added user P to users collection
 2025-01-12 21:39:38,009 :: New order made by 6784981d12822136cc20b283
 2025-01-12 21:40:10,435 :: login as P is True
-2025-01-12 21:41:42,871 :: login as ML is True
-2025-01-13 07:42:12,566 :: login as ML is True
-2025-01-13 07:50:11,315 :: login as ML is True
+2025-01-13 09:28:17,827 :: Added user bob to users collection
+2025-01-13 09:28:46,777 :: New order made by 67853f21da788c6ad65cac69
+2025-01-13 09:29:14,239 :: New order made by 67853f21da788c6ad65cac69
+2025-01-13 09:29:59,018 :: login as ML is True
+2025-01-13 09:30:23,695 :: Updated quantity of Wingspan to 100
+2025-01-13 09:30:48,687 :: bob has received admin access
+2025-01-13 09:54:44,183 :: login as ML is True
